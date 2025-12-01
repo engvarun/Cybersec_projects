@@ -1,0 +1,66 @@
+Basic Username Safety Checker (Python)
+
+A tiny, beginner-friendly Python script that checks if a username looks weak or risky and shows a quick warning. Perfect for learning and adding to your GitHub resume.
+
+Features
+
+Flags usernames that are too short (<5 characters)
+
+Detects very common usernames (admin, user, test)
+
+Warns if username contains special characters
+
+Warns if username is numbers-only
+
+Prints a clear message so users can pick a safer username
+
+
+Code (username_checker.py)
+
+username = input("Enter username: ").lower()
+
+weak_names = ["admin", "user", "test"]
+
+if len(username) < 5:
+    print("⚠️ Username too short!")
+elif username in weak_names:
+    print("⚠️ Common or risky username!")
+elif not username.isalnum():
+    print("⚠️ Username contains special characters!")
+elif username.isdigit():
+    print("⚠️ Username cannot be numbers only!")
+else:
+    print("✔️ Username looks acceptable.")
+
+
+How to run
+
+1 Make sure you have Python 3 installed.
+
+2 Save the code above as username_checker.py.
+
+3 Run in terminal or command prompt:
+
+python username_checker.py
+
+
+4 Type a username when prompted and see the result.
+
+Example:
+
+
+Enter username: admin
+⚠️ Common or risky username!
+
+Enter username: john123
+✔️ Username looks acceptable.
+
+Enter username: 12345
+⚠️ Username cannot be numbers only!
+
+
+Tools Used
+
+Python
+
+VS Code (or any text editor)
