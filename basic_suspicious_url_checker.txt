@@ -1,0 +1,65 @@
+A simple Python script that checks whether a URL or filename looks suspicious based on common phishing keywords and risky file extensions.
+This is a beginner-friendly cybersecurity project designed to help identify basic security red flags.
+
+🔍 Features
+
+Detects risky file extensions like .exe, .bat, .scr, .js
+
+Flags phishing-related keywords such as free, login, verify, update
+
+Provides quick alerts indicating potential security risks
+
+Lightweight and easy to use — no external libraries required
+
+🧪 How It Works
+
+The script performs two basic checks
+
+File Extension Check
+Alerts if the filename ends with a commonly abused extension.
+
+Phishing Keyword Check
+Alerts if the URL contains common phishing-related words.
+
+If none of these conditions are met, the script marks the input as safe based on basic rules.
+
+
+code:
+
+url = input("Enter URL or filename: ").lower()
+
+bad_ext = [".exe", ".bat", ".scr", ".js"]
+bad_words = ["free", "login", "verify", "update"]
+
+if any(url.endswith(e) for e in bad_ext):
+    print("⚠️ Suspicious file extension!")
+elif any(w in url for w in bad_words):
+    print("⚠️ Possible phishing pattern!")
+else:
+    print("✔️ Looks safe (no basic red flags).")
+
+
+
+▶️ How to Run
+
+Install Python (if not already installed).
+
+Save the script as checker.py.
+
+Run it using:python checker.py
+
+
+
+Enter any URL or filename when prompted.
+
+📂 Project Use Case
+
+This project helps beginners understand simple threat indicators and basic security logic used in malware and phishing detection.
+
+🛠️ Technologies Used
+
+Python
+
+String Matching
+
+Basic Cybersecurity Concepts
